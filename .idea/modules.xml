@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/br/com/projeto/equipe 1/Mockup./Mockup..iml" filepath="$PROJECT_DIR$/br/com/projeto/equipe 1/Mockup./Mockup..iml" />
+      <module fileurl="file://$PROJECT_DIR$/br/br.iml" filepath="$PROJECT_DIR$/br/br.iml" />
+      <module fileurl="file://$PROJECT_DIR$/br/com/com.iml" filepath="$PROJECT_DIR$/br/com/com.iml" />
+      <module fileurl="file://$PROJECT_DIR$/br/com/projeto/equipe 1/equipe 1.iml" filepath="$PROJECT_DIR$/br/com/projeto/equipe 1/equipe 1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gerenciador-de-produto.iml" filepath="$PROJECT_DIR$/gerenciador-de-produto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/br/com/projeto/model/model.iml" filepath="$PROJECT_DIR$/br/com/projeto/model/model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/br/com/projeto/projeto.iml" filepath="$PROJECT_DIR$/br/com/projeto/projeto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/br/com/projeto/service/service.iml" filepath="$PROJECT_DIR$/br/com/projeto/service/service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/br/com/projeto/util/util.iml" filepath="$PROJECT_DIR$/br/com/projeto/util/util.iml" />
+    </modules>
+  </component>
+</project>
