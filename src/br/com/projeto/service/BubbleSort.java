@@ -1,5 +1,6 @@
-package service;
+package br.com.projeto.service;
 
+import br.com.projeto.model.Produto;
 
 public class BubbleSort {
 
