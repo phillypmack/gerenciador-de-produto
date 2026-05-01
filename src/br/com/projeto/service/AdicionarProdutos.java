@@ -4,15 +4,12 @@ import br.com.projeto.model.Produto;
 
 public class AdicionarProdutos {
 
-    public static void adicionarProdutos(int id, String nome, double preco, Produto[] lista) {
-        Produto produto = new Produto();
-        produto.setId(id);
-        produto.setNome(nome);
-        produto.setPreco(preco);
+    public static void adicionarProdutos(Produto p, Produto[] lista) {
+
 
         for(int i = 0; i < lista.length; i++){
             if(lista[i] == null){
-                lista[i] = produto;
+                lista[i] = p;
                 break;
             }
         }

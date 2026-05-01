@@ -1,9 +1,7 @@
 package br.com.projeto;
 
 import br.com.projeto.model.Produto;
-import br.com.projeto.service.AdicionarProdutos;
-import br.com.projeto.service.ListarProdutos;
-import br.com.projeto.service.TabelaHash;
+import br.com.projeto.service.*;
 
 import java.util.Scanner;
 
@@ -11,15 +9,12 @@ public class Main {
     public static void main(String[] args) {
         int tamanho = 10;
         Scanner sc = new Scanner(System.in);
-        Produto[] lista = new Produto[tamanho];
-
-        AdicionarProdutos.adicionarProdutos(0,"Picanha",67.90 , lista);
-        AdicionarProdutos.adicionarProdutos(1,"Arroz 5KG",35.90 , lista);
-        AdicionarProdutos.adicionarProdutos(2,"Feijão",12.90 , lista);
+        Produto[] vetor = new Produto[tamanho];
+        TabelaHash tabelaHash = new TabelaHash(tamanho);
 
 
 
-        ListarProdutos.listarProdutos(lista);
+        ListarProdutos.listarProdutos(vetor);
 
         int selecao = -1;
         do {
@@ -41,10 +36,41 @@ public class Main {
                     sc.nextLine();
                     String nome = sc.nextLine();
                     System.out.print("Digite o valor do produto: ");
-                    double valor = sc.nextDouble();
-                    Produto produto = new Produto(id, nome, valor);
-
-
+                    double preco = sc.nextDouble();
+                    Produto produto = new Produto(id, nome, preco);
+                    AdicionarProdutos.adicionarProdutos(produto, vetor);
+                    tabelaHash.inserir(produto);
+                    break;
+                case 2:
+                    ListarProdutos.listarProdutos(vetor);
+                    break;
+                case 3:
+                    BubbleSort.bubbleSort(vetor);
+                    break;
+                case 4:
+                    SelectionSort.selectionSort(vetor);
+                    break;
+                case 5:
+                    System.out.print("Informe a id do produto que deseja buscar: ");
+                    int idBuscaSequencial = sc.nextInt();
+                    BuscaSequencial.buscaSequencial(vetor, idBuscaSequencial);
+                    break;
+                case 6:
+                    System.out.print("Informe a id do produto que deseja buscar: ");
+                    int idBuscaBinaria = sc.nextInt();
+                    BuscaBinaria.BuscaBinaria(vetor, idBuscaBinaria);
+                    break;
+                case 7:
+                    System.out.print("Informe a id do produto que deseja buscar: ");
+                    int idBuscaHash = sc.nextInt();
+                    tabelaHash.buscar(idBuscaHash);
+                    break;
+                case 0:
+                    System.out.println("Saindo do sistema...");
+                    break;
+                default:
+                    System.out.println("Valor inválido!");
+                    break;
             }
         } while (selecao != 0);
 

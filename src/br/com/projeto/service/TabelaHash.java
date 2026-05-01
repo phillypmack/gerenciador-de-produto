@@ -1,5 +1,8 @@
 package br.com.projeto.service;
 
+import br.com.projeto.model.Produto;
+import br.com.projeto.util.ListaEncadeada;
+
 public class TabelaHash {
     private ListaEncadeada[] tabela;
     private int tamanho;
@@ -15,22 +18,25 @@ public class TabelaHash {
         }
     }
 
-    public int funcaoHash(int chave) {
-        return chave % tamanho;
+    public int funcaoHash(int id) {
+        return id % tamanho;
     }
 
-    public void inserirFinal(int chave) {
-        int indice = funcaoHash(chave);
-        tabela[indice].inserirFinal(chave);
-        System.out.printf("Chave %d inserida no índice %d%n ", chave, indice);
+    public  void inserir(Produto p) {
+        int indice = funcaoHash(p.getId());
+        tabela[indice].inserir(p);
+        System.out.printf("Produto %s inserida no índice %d%n ", p.getNome(), indice);
     }
 
-    public void buscar(int chave) {
-        int indice = funcaoHash(chave);
-        if (tabela[indice].buscar(chave)) {
-            System.out.printf("Chave %d encontrada no índice %d%n", chave, indice);
+    public Produto buscar(int id) {
+        int indice = funcaoHash(id);
+        Produto p = tabela[indice].buscar(id);
+        if (p != null) {
+            System.out.printf("Chave %d encontrada no índice %d%n", id, indice);
+            return p;
         } else {
-            System.out.printf("Chave %d não encontrada.%n", chave);
+            System.out.printf("Chave %d não encontrada.%n", id);
+            return null;
         }
     }
 }

@@ -1,16 +1,18 @@
 package br.com.projeto.util;
 
+import br.com.projeto.model.Produto;
+
 public class No {
 
-    private int dado;
+    private Produto dado;
     private No proximo;
 
 
-    public int getDado() {
+    public Produto getDado() {
         return dado;
     }
 
-    public void setDado(int dado) {
+    public void setDado(Produto dado) {
         this.dado = dado;
     }
 

@@ -1,22 +1,24 @@
 package br.com.projeto.util;
 
+import br.com.projeto.model.Produto;
+
 public class ListaEncadeada {
 
     private No head;
 
 
 
-    public boolean buscar(int valor) {
+    public Produto buscar(int id) {
         No atual = head;
 
         while (atual != null) {
-            if (atual.getDado() == valor) {
-                return true;
+            if (atual.getDado().getId() == id) {
+                return atual.getDado();
             }
             atual = atual.getProximo();
         }
 
-        return false;
+        return null;
     }
     public void consultar() {
         if (head == null) {
@@ -37,7 +39,7 @@ public class ListaEncadeada {
     }
 
 
-    public void inserirFinal(int valor) {
+    public void inserir(Produto valor) {
         No novoNo = new No();
         novoNo.setDado(valor);
         novoNo.setProximo(null);
