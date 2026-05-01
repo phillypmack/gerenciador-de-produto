@@ -38,6 +38,10 @@ public class Produto {
     public void setId(int id) {
     }
 
+    @Override
+    public String toString() {
+        return "Produto"+ id + "->" + "nome = " + nome + ", preco = " + preco ;
+    }
 
 
 }
