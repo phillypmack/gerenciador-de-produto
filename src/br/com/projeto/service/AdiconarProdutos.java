@@ -1,7 +1,7 @@
 package br.com.projeto.service;
 
 import br.com.projeto.model.Produto;
-import br.com.projeto.Main;
+import java.util.ArrayList;
 
 public class AdiconarProdutos {
 
@@ -12,9 +12,6 @@ public class AdiconarProdutos {
         produto.setId(id);
         produto.setNome(nome);
         produto.setPreco(preco);
-        id++;
-
-        lista[id] = produto;
 
     }
 }
