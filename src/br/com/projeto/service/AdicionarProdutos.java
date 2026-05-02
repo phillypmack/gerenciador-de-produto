@@ -5,11 +5,10 @@ import br.com.projeto.model.Produto;
 public class AdicionarProdutos {
 
     public static void adicionarProdutos(Produto p, Produto[] lista) {
-
-
         for(int i = 0; i < lista.length; i++){
             if(lista[i] == null){
                 lista[i] = p;
+                System.out.printf("Produto %s adicionado no índíce %d no vetor%n", p.getNome(), i);
                 break;
             }
         }

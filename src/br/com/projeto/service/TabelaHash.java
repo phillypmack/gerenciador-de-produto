@@ -25,17 +25,15 @@ public class TabelaHash {
     public  void inserir(Produto p) {
         int indice = funcaoHash(p.getId());
         tabela[indice].inserir(p);
-        System.out.printf("Produto %s inserida no índice %d%n ", p.getNome(), indice);
+        System.out.printf("Produto %s inserida no índice %d na tabela hash%n", p.getNome(), indice);
     }
 
     public Produto buscar(int id) {
         int indice = funcaoHash(id);
         Produto p = tabela[indice].buscar(id);
         if (p != null) {
-            System.out.printf("Chave %d encontrada no índice %d%n", id, indice);
             return p;
         } else {
-            System.out.printf("Chave %d não encontrada.%n", id);
             return null;
         }
     }
