@@ -20,23 +20,6 @@ public class ListaEncadeada {
 
         return null;
     }
-    public void consultar() {
-        if (head == null) {
-            System.out.println("vazio");
-        } else {
-
-
-            No aux = head;
-
-
-            while (aux != null) {
-
-                System.out.print(aux.getDado() + " -> ");
-                aux = aux.getProximo();
-            }
-            System.out.println("null");
-        }
-    }
 
 
     public void inserir(Produto valor) {

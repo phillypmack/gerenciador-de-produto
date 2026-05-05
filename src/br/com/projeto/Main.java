@@ -2,6 +2,7 @@ package br.com.projeto;
 
 import br.com.projeto.model.Produto;
 import br.com.projeto.service.*;
+import br.com.projeto.util.Util;
 
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ public class Main {
         int selecao = -1;
         do {
             try {
-
+                System.out.println();
                 System.out.println("Selecione uma das opções abaixo:" +
                         "\n1 - Cadastrar produto" +
                         "\n2 - Listar produtos" +
@@ -24,7 +25,7 @@ public class Main {
                         "\n5 - Buscar (Sequencial)" +
                         "\n6 - Buscar (binária)" +
                         "\n7 - Buscar (Hash)" +
-                        "\n0 - Sair");
+                        "\n0 - Sair\n");
                 selecao = sc.nextInt();
 
                 switch (selecao) {
@@ -37,12 +38,11 @@ public class Main {
                         System.out.print("Digite o valor do produto: ");
                         double preco = sc.nextDouble();
                         Produto produto = new Produto(id, nome, preco);
-                        AdicionarProdutos.adicionarProdutos(produto, vetor);
+                        Util.adicionarProdutos(produto, vetor);
                         tabelaHash.inserir(produto);
-                        System.out.println();
                         break;
                     case 2:
-                        ListarProdutos.listarProdutos(vetor);
+                        Util.listarProdutos(vetor);
                         break;
                     case 3:
                         BubbleSort.bubbleSort(vetor);
@@ -93,7 +93,11 @@ public class Main {
                         break;
                 }
             } catch (Exception  e) {
-                System.err.println("Erro: Opção inválida, pressione Enter e tente novamente");
+                if (e.getMessage() != null) {
+                    System.err.println("Erro: " + e.getMessage() + ", pressione Enter e tente novamente");
+                } else {
+                    System.err.println("Erro: Opção inválida, pressione Enter e tente novamente");
+                }
                 sc.nextLine();
                 sc.nextLine();
             }

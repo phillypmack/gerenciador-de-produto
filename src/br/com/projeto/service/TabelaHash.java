@@ -6,7 +6,6 @@ import br.com.projeto.util.ListaEncadeada;
 public class TabelaHash {
     private ListaEncadeada[] tabela;
     private int tamanho;
-    private final int vazio = -1;
 
 
     public TabelaHash(int tamanho) {
@@ -22,7 +21,13 @@ public class TabelaHash {
         return id % tamanho;
     }
 
-    public  void inserir(Produto p) {
+    public  void inserir(Produto p) throws Exception {
+        Produto produtoExiste = buscar(p.getId());
+        if (produtoExiste != null) {
+            if (produtoExiste.getId() == p.getId()) {
+                throw new Exception("Id não pode ser repetida");
+            }
+        }
         int indice = funcaoHash(p.getId());
         tabela[indice].inserir(p);
         System.out.printf("Produto %s inserida no índice %d na tabela hash%n", p.getNome(), indice);
@@ -30,11 +35,6 @@ public class TabelaHash {
 
     public Produto buscar(int id) {
         int indice = funcaoHash(id);
-        Produto p = tabela[indice].buscar(id);
-        if (p != null) {
-            return p;
-        } else {
-            return null;
-        }
+        return tabela[indice].buscar(id);
     }
 }

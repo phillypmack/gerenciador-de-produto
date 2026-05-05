@@ -5,6 +5,9 @@ import br.com.projeto.model.Produto;
 public class BuscaBinaria {
 
     public static Produto BuscaBinaria(Produto[] lista, int id) {
+        if (lista[0] == null) {
+            return null;
+        }
         int inicio = 0;
         int fim = lista.length - 1;
         for (int i = 0; i < lista.length && lista[i] != null; i++) {
